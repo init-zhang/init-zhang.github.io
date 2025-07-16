@@ -1,0 +1,117 @@
+:root {
+    --fg: #ebdbb2;
+    --bg: #282828;
+    --bg1: #3c3836;
+    --gray: #928374;
+    --yellow: #fabd2f;
+    --blue: #83a598;
+    --green: #b8bb26;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--fg);
+    background-color: var(--bg);
+    font-family: monospace;
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 60ch;
+    margin: 2rem auto;
+    padding: 0 2ch;
+}
+
+header {
+    display: flex;
+    font-weight: bold;
+    flex-direction: row;
+    align-items: center;
+    gap: 1ch;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    color: var(--bg);
+    background-color: var(--yellow);
+    padding: .25rem 1ch;
+    margin: 0;
+}
+
+nav:hover a:not(:first-child):not(:hover) {
+  opacity: .2;
+}
+
+p, h1, h3, h3 {
+    margin: 1rem 0;
+}
+
+h1, h2, h3 {
+    color: var(--yellow);
+    font-size: inherit;
+}
+
+a {
+    color: var(--blue);
+}
+
+a:hover:not(nav a) {
+    text-decoration: none;
+}
+
+ul {
+    padding-left: 2ch;
+}
+
+ul > li::marker {
+    content: "- "; 
+}
+
+summary > * {
+    display: inline;
+}
+
+summary::marker {
+    content: "[+] ";
+    color: var(--gray);
+}
+
+details[open] > summary::marker {
+    content: "[-] ";
+    color: var(--fg);
+}
+
+code {
+    border: 1px solid var(--gray);
+    padding: .125ch 1ch;
+}
+
+section {
+    border: 1px solid var(--gray);
+    padding: 1.5ch;
+    margin: 1rem .5ch;
+}
+
+section *:first-child {
+    margin-top: 0;
+}
+
+section *:last-child {
+    margin-bottom: 0;
+}
+
+.yellow {
+    color: var(--yellow);
+}
+
+.blinking {
+    animation: blink-animation 1s none infinite;
+}
+
+@keyframes blink-animation {
+    50% {
+        opacity: 0;
+    }
+}

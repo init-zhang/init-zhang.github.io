@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Projects</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>user@init-zhang:~/projects$<span class="blinking">_</span></h1>
+        <nav>
+            <a href="/">cd</a>
+            <a href="/projects.html">projects</a>
+            <a href="/blog.html">blog</a>
+            <a href="/#cd">--help</a>
+        </nav>
+    </header>
+
+    <h2>Projects</h2>
+    <p>You can find the full list of my projects on my <a href="https://github.com/init-zhang">GitHub</a>.</p>
+
+    <section><details open>
+        <summary><h3>Zhang's Web Journal</h3></summary>
+        <p>Real creative name, I know. This Flask application is a <strong>localhost</strong>, personal journal and blog which uses Markdown files internally. This way, you can view your data even without the app.</p>
+        <p>So far it has been basic features, such as:</p>
+
+        <ul>
+            <li>Basic markdown support</li>
+            <li>Table of contents</li>
+            <li>Year and month views</li>
+            <li>Entry title and descripton metadata</li>
+        </ul>
+
+        <p>I've been using this app for a few months now and have been adding features as I deemed fit. You're free to fork this project and tailor it to your own needs.</p>
+
+        <p>I don't have a live demo as the app is <strong>strictly localhost</strong> (it uses Flask's development server). You can find the <a href="https://github.com/init-zhang/zhangs-web-journal">source code here</a>.</p>
+    </details></section>
+
+    <section><details open>
+        <summary><h3>Bash HTTP Server</h3></summary>
+        <p>Does exactly what it says on the tin. It's a HTTP server made in Bash using Netcat.</p>
+
+        <p><strong>This should not be used in production.</strong> You would be insane to use this single-threaded HTTP (notice there's no S) server and expose it to the web.
+    </details></section>
+
+    <section><details open>
+        <summary><h3>Jarmos</h3></summary>
+
+        <p>A CLI graphing calculator I made whilst learning Java. It's primitive at best, only with basic operations and no functions. It was more of a tool to learn parsing and Java.</p>
+
+        <p>It supports different levels of accuracy.</p>
+    </details></section>
+
+</body>
+
+</html>
