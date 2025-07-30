@@ -36,29 +36,34 @@ header {
 header h1 {
     color: var(--bg);
     background-color: var(--yellow);
-    padding: .25rem 1ch;
+    padding: 0.25rem 1ch;
     margin: 0;
 }
 
-nav:hover a:not(:first-child):not(:hover) {
-  opacity: .2;
+nav > a {
+    transition: opacity 0.2s;
 }
 
-p, h1, h3, h3 {
+nav:hover a:not(:first-child):not(:hover) {
+    opacity: 0.2;
+}
+
+/* Margins */
+
+p,
+h1,
+h2,
+h3 {
     margin: 1rem 0;
 }
 
-h1, h2, h3 {
+/* Block elements */
+
+h1,
+h2,
+h3 {
     color: var(--yellow);
     font-size: inherit;
-}
-
-a {
-    color: var(--blue);
-}
-
-a:hover:not(nav a) {
-    text-decoration: none;
 }
 
 ul {
@@ -66,7 +71,7 @@ ul {
 }
 
 ul > li::marker {
-    content: "- "; 
+    content: "- ";
 }
 
 summary > * {
@@ -76,6 +81,11 @@ summary > * {
 summary::marker {
     content: "[+] ";
     color: var(--gray);
+    transition: color 0.2s;
+}
+
+summary:hover::marker {
+    color: var(--fg);
 }
 
 details[open] > summary::marker {
@@ -83,15 +93,32 @@ details[open] > summary::marker {
     color: var(--fg);
 }
 
+/* Inline elements */
+
+a {
+    color: var(--blue);
+}
+
+a:hover:not(nav a) {
+    text-decoration: none;
+}
+
 code {
     border: 1px solid var(--gray);
-    padding: .125ch 1ch;
+    padding: 0.125ch 1ch;
 }
+
+/* Section boxes */
 
 section {
     border: 1px solid var(--gray);
     padding: 1.5ch;
-    margin: 1rem .5ch;
+    margin: 1rem 0.5ch;
+    transition: border-color 0.2s;
+}
+
+section:hover {
+    border-color: var(--fg);
 }
 
 section *:first-child {
@@ -102,6 +129,8 @@ section *:last-child {
     margin-bottom: 0;
 }
 
+/* Custom classes */
+
 .yellow {
     color: var(--yellow);
 }
@@ -110,8 +139,11 @@ section *:last-child {
     animation: blink-animation 1s none infinite;
 }
 
+/* Keyframes */
+
 @keyframes blink-animation {
     50% {
         opacity: 0;
     }
 }
+
