@@ -18,9 +18,9 @@ body {
     font-family: monospace;
     font-size: 1rem;
     line-height: 1.5;
-    max-width: 60ch;
     margin: 2rem auto;
     padding: 0 2ch;
+    max-width: 60ch;
 }
 
 header {
@@ -104,8 +104,9 @@ a:hover:not(nav a) {
 }
 
 code {
+    padding: 0.125ch .5ch;
+    color: var(--yellow);
     border: 1px solid var(--gray);
-    padding: 0.125ch 1ch;
 }
 
 /* Section boxes */
