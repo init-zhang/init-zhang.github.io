@@ -2,10 +2,12 @@
 
 set viminfo=
 set noswapfile
+filetype plugin off
 
 syntax off
 set rnu nu
 set hlsearch
+set linebreak
 
 set tabstop=4 shiftwidth=4 expandtab smarttab
 set autoindent smartindent
@@ -23,7 +25,16 @@ nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P
+vnoremap <leader>p "+p
 
 inoremap <expr> <Tab> getline('.')[0 : col('.')-2] =~ '\S' ? "\<C-n>" : "\<Tab>"
 
 nnoremap <C-l> :noh<CR><C-l>
+
+nnoremap <leader>s :set spell!<CR>
+nnoremap <leader>z z=
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+
+autocmd FileType markdown setlocal spell
+
+autocmd FileType netrw setlocal nu rnu
