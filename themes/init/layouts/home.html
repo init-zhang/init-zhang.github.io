@@ -1,0 +1,8 @@
+{{ define "main" }}
+{{ .Content }}
+<h2>Latest Posts</h2>
+{{ range site.RegularPages }}
+    {{ time.Format "2006 Jan 2" .Date }}
+    <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+{{ end }}
+{{ end }}
