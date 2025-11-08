@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Explaining My Vimrc | Zhang Lin</title>
+
+    <link rel="stylesheet" href="/css/main.css">
+
+
+
+
+</head>
+<body>
+  <header>
+    <nav>
+    <a href="/">Home</a>
+    <a href="/projects/">Projects</a>
+    <a href="/posts/">Posts</a>
+    <a href="/tags/">Tags</a>
+</nav>
+
+<h1>Explaining My Vimrc</h1>
+
+  </header>
+  <main>
+    
+
+
+
+<time datetime="2025-11-08T00:00:00&#43;00:00">November 8, 2025</time>
+
+<p>This is my <code>.vimrc</code> as off 2025-11-08. This post will be breaking down the config line by line.</p>
+<pre tabindex="0"><code class="language-vimscript" data-lang="vimscript">&#34; vim -Nu &lt;(curl https://init-zhang.github.io/vimrc)
+
+set viminfo=
+set noswapfile
+filetype plugin indent on
+
+set rnu nu
+set hlsearch
+set linebreak
+
+set tabstop=4 shiftwidth=4 expandtab smarttab
+set autoindent smartindent
+
+set laststatus=2
+set showcmd
+
+highlight TrailingWhitespace ctermbg=red
+match TrailingWhitespace /\s\+$/
+
+let mapleader=&#39; &#39;
+
+nnoremap &lt;leader&gt;q :q&lt;CR&gt;
+nnoremap &lt;leader&gt;w :x&lt;CR&gt;
+nnoremap &lt;leader&gt;f :up&lt;CR&gt;
+
+nnoremap &lt;leader&gt;E :E&lt;CR&gt;
+nnoremap &lt;leader&gt;e :Te&lt;CR&gt;
+let g:netrw_fastbrowse=2
+
+noremap &lt;leader&gt;y &#34;+y
+noremap &lt;leader&gt;p &#34;+p
+noremap &lt;leader&gt;P &#34;+P
+
+inoremap &lt;expr&gt; &lt;Tab&gt; getline(&#39;.&#39;)[0 : col(&#39;.&#39;)-2] =~ &#39;\S&#39; ? &#34;\&lt;C-n&gt;&#34; : &#34;\&lt;Tab&gt;&#34;
+
+nnoremap &lt;C-l&gt; :noh&lt;CR&gt;&lt;C-l&gt;
+
+nnoremap &lt;leader&gt;s :set spell!&lt;CR&gt;
+nnoremap &lt;leader&gt;z z=
+inoremap &lt;C-l&gt; &lt;c-g&gt;u&lt;Esc&gt;[s1z=`]a&lt;c-g&gt;u
+
+autocmd FileType markdown setlocal spell
+autocmd FileType netrw setlocal nu rnu
+</code></pre><hr>
+<p>This command allows me to run Vim one time with my config. It doens&rsquo;t depend on <code>git</code> and just requires <code>vim</code> and <code>curl</code>. <code>-N</code> is to enable non-compatible mode to ensure the config works correctly.</p>
+<pre><code>&quot; vim -Nu &lt;(curl https://init-zhang.github.io/vimrc)
+</code></pre>
+<p>Here I remove the vim info and swap file, I just don&rsquo;t find them useful.</p>
+<pre><code>set viminfo=
+set noswapfile
+</code></pre>
+<p>For automatic indenting depending on the file type.</p>
+<pre><code>filetype plugin indent on
+</code></pre>
+<p>Enables both relative line numbers and actual file number on the current line.</p>
+<pre><code>set rnu nu
+</code></pre>
+<p>Highlight search results</p>
+<pre><code>set hlsearch
+</code></pre>
+<p>Wrap lines by word and not character, useful for writing.</p>
+<pre><code>set linebreak
+</code></pre>
+<p>Sensible tab behaviour, set tabs to 4 spaces, set shifting to 4 spaces too, expand tab characters into space characters, delete 4 spaces on backspace.</p>
+<pre><code>set tabstop=4 shiftwidth=4 expandtab smarttab
+</code></pre>
+<p>Sensible indent behaviour, such as maintaining tab level when pressing return/enter.</p>
+<pre><code>set autoindent smartindent
+</code></pre>
+<p>Always on status line, I just find useful to have.</p>
+<pre><code>set laststatus=2
+</code></pre>
+<p>Show the latest pressed keys for the current action.</p>
+<pre><code>set showcmd
+</code></pre>
+<p>Create a highlight group with a red background.</p>
+<pre><code>highlight TrailingWhitespace ctermbg=red
+</code></pre>
+<p>Set that highlight group to trailing spaces.</p>
+<pre><code>match TrailingWhitespace /\s\+$/
+</code></pre>
+<p>Set leader key to space.</p>
+<pre><code>let mapleader=' '
+</code></pre>
+<p>Create more convenient keybinds for quitting, save-quitting, saving.</p>
+<pre><code>nnoremap &lt;leader&gt;q :q&lt;CR&gt;
+nnoremap &lt;leader&gt;w :x&lt;CR&gt;
+nnoremap &lt;leader&gt;f :up&lt;CR&gt;
+</code></pre>
+<p>Leader keybinds for opening <code>netrw</code> in both the current window or new tab.</p>
+<pre><code>nnoremap &lt;leader&gt;E :E&lt;CR&gt;
+nnoremap &lt;leader&gt;e :Te&lt;CR&gt;
+</code></pre>
+<p>Set netrw to only update directory listings on new directory or netrw refresh.</p>
+<pre><code>let g:netrw_fastbrowse=2
+</code></pre>
+<p>Leader keybinds for clipboard yanking/copying and pasting</p>
+<pre><code>noremap &lt;leader&gt;y &quot;+y
+noremap &lt;leader&gt;p &quot;+p
+noremap &lt;leader&gt;P &quot;+P
+</code></pre>
+<p>Enable keyword competition on tab. If the line is only whitespace, insert a tab, otherwise open keyword competition prompt.</p>
+<pre><code>inoremap &lt;expr&gt; &lt;Tab&gt; getline('.')[0 : col('.')-2] =~ '\S' ? &quot;\&lt;C-n&gt;&quot; : &quot;\&lt;Tab&gt;&quot;
+</code></pre>
+<p>Set refresh window keybind also clears search highlighting.</p>
+<pre><code>nnoremap &lt;C-l&gt; :noh&lt;CR&gt;&lt;C-l&gt;
+</code></pre>
+<p>Leader keybind to toggle spell checking</p>
+<pre><code>nnoremap &lt;leader&gt;s :set spell!&lt;CR&gt;
+</code></pre>
+<p>More convenient leader keybind to suggest spelling corrections.</p>
+<pre><code>nnoremap &lt;leader&gt;z z=
+</code></pre>
+<p>Insert mode keybind to autocorrect the last spelling mistakes, choosing the first correction. It also makes the correction into its own undo group (so it can be undone in one undo) and returns the cursor position.</p>
+<pre><code>inoremap &lt;C-l&gt; &lt;c-g&gt;u&lt;Esc&gt;[s1z=`]a&lt;c-g&gt;u
+</code></pre>
+<p>Enable spell checking by default in only markdown files.</p>
+<pre><code>autocmd FileType markdown setlocal spell
+</code></pre>
+<p>Set relative line numbers and normal line numbers in netrw for easier navigation.</p>
+<pre><code>autocmd FileType netrw setlocal nu rnu
+</code></pre>
+
+
+  <div>
+    <div>Tags:</div>
+    <ul>
+        <li><a href="/tags/vim/">Vim</a></li>
+        <li><a href="/tags/config/">Config</a></li>
+    </ul>
+  </div>
+
+
+  </main>
+  <footer>
+    <p>Copyright 2025. All rights reserved.</p>
+
+  </footer>
+</body>
+</html>
