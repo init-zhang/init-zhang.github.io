@@ -1,6 +1,7 @@
 +++
 date = 2025-11-08
 title = 'Explaining My Vimrc'
+tags = ['vim', 'config']
 +++
 
 This is my `.vimrc` as off 2025-11-08. This post will be breaking down the config line by line.

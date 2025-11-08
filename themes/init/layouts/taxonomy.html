@@ -1,6 +1,9 @@
 {{ define "main" }}
-  {{ .Content }}
-  {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-  {{ end }}
+{{ .Content }}
+<p>Filter posts by tag: </p>
+<p>
+{{ range .Pages }}
+    <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a><br>
+{{ end }}
+</p>
 {{ end }}
