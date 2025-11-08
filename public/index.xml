@@ -1,26 +1,47 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Zhang Lin</title>
-    <link>//localhost:1313/</link>
-    <description>Recent content on Zhang Lin</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 08 Nov 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Explaining My Vimrc</title>
-      <link>//localhost:1313/posts/explaining-my-vimrc/</link>
-      <pubDate>Sat, 08 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/explaining-my-vimrc/</guid>
-      <description>&lt;p&gt;This is my &lt;code&gt;.vimrc&lt;/code&gt; as off 2025-11-08. This post will be breaking down the config line by line.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-vimscript&#34; data-lang=&#34;vimscript&#34;&gt;&amp;#34; vim -Nu &amp;lt;(curl https://init-zhang.github.io/vimrc)&#xA;&#xA;set viminfo=&#xA;set noswapfile&#xA;filetype plugin indent on&#xA;&#xA;set rnu nu&#xA;set hlsearch&#xA;set linebreak&#xA;&#xA;set tabstop=4 shiftwidth=4 expandtab smarttab&#xA;set autoindent smartindent&#xA;&#xA;set laststatus=2&#xA;set showcmd&#xA;&#xA;highlight TrailingWhitespace ctermbg=red&#xA;match TrailingWhitespace /\s\+$/&#xA;&#xA;let mapleader=&amp;#39; &amp;#39;&#xA;&#xA;nnoremap &amp;lt;leader&amp;gt;q :q&amp;lt;CR&amp;gt;&#xA;nnoremap &amp;lt;leader&amp;gt;w :x&amp;lt;CR&amp;gt;&#xA;nnoremap &amp;lt;leader&amp;gt;f :up&amp;lt;CR&amp;gt;&#xA;&#xA;nnoremap &amp;lt;leader&amp;gt;E :E&amp;lt;CR&amp;gt;&#xA;nnoremap &amp;lt;leader&amp;gt;e :Te&amp;lt;CR&amp;gt;&#xA;let g:netrw_fastbrowse=2&#xA;&#xA;noremap &amp;lt;leader&amp;gt;y &amp;#34;+y&#xA;noremap &amp;lt;leader&amp;gt;p &amp;#34;+p&#xA;noremap &amp;lt;leader&amp;gt;P &amp;#34;+P&#xA;&#xA;inoremap &amp;lt;expr&amp;gt; &amp;lt;Tab&amp;gt; getline(&amp;#39;.&amp;#39;)[0 : col(&amp;#39;.&amp;#39;)-2] =~ &amp;#39;\S&amp;#39; ? &amp;#34;\&amp;lt;C-n&amp;gt;&amp;#34; : &amp;#34;\&amp;lt;Tab&amp;gt;&amp;#34;&#xA;&#xA;nnoremap &amp;lt;C-l&amp;gt; :noh&amp;lt;CR&amp;gt;&amp;lt;C-l&amp;gt;&#xA;&#xA;nnoremap &amp;lt;leader&amp;gt;s :set spell!&amp;lt;CR&amp;gt;&#xA;nnoremap &amp;lt;leader&amp;gt;z z=&#xA;inoremap &amp;lt;C-l&amp;gt; &amp;lt;c-g&amp;gt;u&amp;lt;Esc&amp;gt;[s1z=`]a&amp;lt;c-g&amp;gt;u&#xA;&#xA;autocmd FileType markdown setlocal spell&#xA;autocmd FileType netrw setlocal nu rnu&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;&#xA;&lt;p&gt;This command allows me to run Vim one time with my config. It doens&amp;rsquo;t depend on &lt;code&gt;git&lt;/code&gt; and just requires &lt;code&gt;vim&lt;/code&gt; and &lt;code&gt;curl&lt;/code&gt;. &lt;code&gt;-N&lt;/code&gt; is to enable non-compatible mode to ensure the config works correctly.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Hello World</title>
-      <link>//localhost:1313/posts/hello-world/</link>
-      <pubDate>Thu, 06 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/hello-world/</guid>
-      <description>&lt;h2 id=&#34;hello-world&#34;&gt;Hello World&lt;/h2&gt;&#xA;&lt;p&gt;I wanted to setup a blog, so I decided to do so with Hugo!&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Zhang Lin</title><link>/</link><description>Recent content on Zhang Lin</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 08 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Explaining My Vimrc</title><link>/posts/explaining-my-vimrc/</link><pubDate>Sat, 08 Nov 2025 00:00:00 +0000</pubDate><guid>/posts/explaining-my-vimrc/</guid><description>&lt;p&gt;This is my &lt;code&gt;.vimrc&lt;/code&gt; as off 2025-11-08. This post will be breaking down the config line by line.&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-vimscript" data-lang="vimscript"&gt;&amp;#34; vim -Nu &amp;lt;(curl https://init-zhang.github.io/vimrc)
+
+set viminfo=
+set noswapfile
+filetype plugin indent on
+
+set rnu nu
+set hlsearch
+set linebreak
+
+set tabstop=4 shiftwidth=4 expandtab smarttab
+set autoindent smartindent
+
+set laststatus=2
+set showcmd
+
+highlight TrailingWhitespace ctermbg=red
+match TrailingWhitespace /\s\+$/
+
+let mapleader=&amp;#39; &amp;#39;
+
+nnoremap &amp;lt;leader&amp;gt;q :q&amp;lt;CR&amp;gt;
+nnoremap &amp;lt;leader&amp;gt;w :x&amp;lt;CR&amp;gt;
+nnoremap &amp;lt;leader&amp;gt;f :up&amp;lt;CR&amp;gt;
+
+nnoremap &amp;lt;leader&amp;gt;E :E&amp;lt;CR&amp;gt;
+nnoremap &amp;lt;leader&amp;gt;e :Te&amp;lt;CR&amp;gt;
+let g:netrw_fastbrowse=2
+
+noremap &amp;lt;leader&amp;gt;y &amp;#34;+y
+noremap &amp;lt;leader&amp;gt;p &amp;#34;+p
+noremap &amp;lt;leader&amp;gt;P &amp;#34;+P
+
+inoremap &amp;lt;expr&amp;gt; &amp;lt;Tab&amp;gt; getline(&amp;#39;.&amp;#39;)[0 : col(&amp;#39;.&amp;#39;)-2] =~ &amp;#39;\S&amp;#39; ? &amp;#34;\&amp;lt;C-n&amp;gt;&amp;#34; : &amp;#34;\&amp;lt;Tab&amp;gt;&amp;#34;
+
+nnoremap &amp;lt;C-l&amp;gt; :noh&amp;lt;CR&amp;gt;&amp;lt;C-l&amp;gt;
+
+nnoremap &amp;lt;leader&amp;gt;s :set spell!&amp;lt;CR&amp;gt;
+nnoremap &amp;lt;leader&amp;gt;z z=
+inoremap &amp;lt;C-l&amp;gt; &amp;lt;c-g&amp;gt;u&amp;lt;Esc&amp;gt;[s1z=`]a&amp;lt;c-g&amp;gt;u
+
+autocmd FileType markdown setlocal spell
+autocmd FileType netrw setlocal nu rnu
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;p&gt;This command allows me to run Vim one time with my config. It doens&amp;rsquo;t depend on &lt;code&gt;git&lt;/code&gt; and just requires &lt;code&gt;vim&lt;/code&gt; and &lt;code&gt;curl&lt;/code&gt;. &lt;code&gt;-N&lt;/code&gt; is to enable non-compatible mode to ensure the config works correctly.&lt;/p&gt;</description></item><item><title>Hello World</title><link>/posts/hello-world/</link><pubDate>Thu, 06 Nov 2025 00:00:00 +0000</pubDate><guid>/posts/hello-world/</guid><description>&lt;h2 id="hello-world"&gt;Hello World&lt;/h2&gt;
+&lt;p&gt;I wanted to setup a blog, so I decided to do so with Hugo!&lt;/p&gt;</description></item></channel></rss>
