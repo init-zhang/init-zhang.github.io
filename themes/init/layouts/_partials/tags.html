@@ -1,0 +1,17 @@
+{{- /*
+Render a string with all tags assigned to given page
+
+@context {page} page The current page.
+
+@example: {{ partial "tags.html" (dict "page" .) }}
+*/}}
+
+{{- $page := .page }}
+
+{{- with $page.GetTerms "tags" }}
+  [
+      {{- range . }}
+        <a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>
+      {{- end }}
+  ]
+{{- end }}
