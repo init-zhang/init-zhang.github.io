@@ -75,6 +75,17 @@ pre {
     overflow: auto;
 }
 
+hr {
+    border: none;
+    color: var(--background);
+    background-color: var(--text);
+    text-align: center;
+}
+
+hr::after {
+    content: "- - -";
+}
+
 footer {
     margin-top: 4rem;
     text-align: center;
