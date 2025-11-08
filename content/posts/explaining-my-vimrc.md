@@ -2,11 +2,12 @@
 date = 2025-11-08
 title = 'Explaining My Vimrc'
 tags = ['vim', 'config']
+description = "Breaking down and explaining my .vimrc line by line."
 +++
 
 This is my `.vimrc` as off 2025-11-08. This post will be breaking down the config line by line.
 
-```vimscript
+```
 " vim -Nu <(curl https://init-zhang.github.io/vimrc)
 
 set viminfo=
@@ -54,7 +55,9 @@ autocmd FileType netrw setlocal nu rnu
 
 ---
 
-This command allows me to run Vim one time with my config. It doesn't depend on `git` and just requires `vim` and `curl`. `-N` is to enable non-compatible mode to ensure the config works correctly.
+This command allows me to run Vim one time with my config. It doesn't depend on `git` and just requires `vim` and `curl`.  
+`-N` is to enable non-compatible mode to ensure the config works correctly.  
+`-u` is to use the `curl`-ed config.
 
     " vim -Nu <(curl https://init-zhang.github.io/vimrc)
 
