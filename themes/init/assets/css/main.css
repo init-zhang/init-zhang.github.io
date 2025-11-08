@@ -20,7 +20,7 @@ body {
     max-width: 60ch;
 }
 
-h1,h2,h3,p,pre,hr {
+h1,h2,h3,p,pre {
     margin: 1rem 0;
 }
 
@@ -78,13 +78,9 @@ pre {
 
 hr {
     border: none;
-    color: var(--background);
-    background-color: var(--text);
-    text-align: center;
-}
-
-hr::after {
-    content: "- - -";
+    border-top: dashed 2px var(--text);
+    max-width: 75%;
+    margin: 2rem auto;
 }
 
 footer {
