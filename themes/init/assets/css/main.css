@@ -12,7 +12,7 @@
 body {
     color: var(--text);
     background-color: var(--background);
-    font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; 
+    font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
     font-size: 1rem;
     line-height: 1.5;
     padding: 2rem;
@@ -20,7 +20,7 @@ body {
     max-width: 60ch;
 }
 
-h1,h2,h3,p {
+h1,h2,h3,p,pre,hr {
     margin: 1rem 0;
 }
 
