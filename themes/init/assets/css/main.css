@@ -52,6 +52,10 @@ a {
     color: #83a598;
 }
 
+p.breadcrumbs a {
+    color: var(--accent);
+}
+
 blockquote {
     border-left: var(--accent) 4px solid;
     padding: 4px 1rem;
