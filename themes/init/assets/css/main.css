@@ -2,7 +2,7 @@
     --text: #ebdbb2;
     --accent: #fabd2f;
     --background: #282828;
-    --code-background: #eee;
+    --code-background: #333;
 }
 
 * {
@@ -20,7 +20,7 @@ body {
     max-width: 60ch;
 }
 
-h1,h2,h3,p, {
+h1,h2,h3,p {
     margin: 1rem 0;
 }
 
@@ -28,9 +28,14 @@ h1,h2,h3 {
     font-size: inherit;
 }
 
+h1 {
+    color: var(--background);
+    background-color: var(--text);
+    text-align: center;
+}
+
 h1::before {
     content: '# ';
-    color: var(--accent);
 }
 
 h2::before {
@@ -55,7 +60,6 @@ blockquote {
 code, pre {
     font-family: monospace;
     background-color: var(--code-background);
-    border-radius: 4px;
 }
 
 code:not(pre code) {
@@ -63,12 +67,8 @@ code:not(pre code) {
 }
 
 pre {
-    padding: 16px;
+    padding: 1rem;
     overflow: auto;
-}
-
-nav {
-    margin-bottom: 2rem;
 }
 
 footer {
