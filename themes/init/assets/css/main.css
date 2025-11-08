@@ -62,7 +62,7 @@ blockquote {
 }
 
 code, pre {
-    font-family: monospace;
+    font-family: inherit;
     background-color: var(--code-background);
 }
 
