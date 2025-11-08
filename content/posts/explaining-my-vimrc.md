@@ -54,7 +54,7 @@ autocmd FileType netrw setlocal nu rnu
 
 ---
 
-This command allows me to run Vim one time with my config. It doens't depend on `git` and just requires `vim` and `curl`. `-N` is to enable non-compatible mode to ensure the config works correctly.
+This command allows me to run Vim one time with my config. It doesn't depend on `git` and just requires `vim` and `curl`. `-N` is to enable non-compatible mode to ensure the config works correctly.
 
     " vim -Nu <(curl https://init-zhang.github.io/vimrc)
 
@@ -71,7 +71,7 @@ Enables both relative line numbers and actual file number on the current line.
 
     set rnu nu
 
-Highlight search results
+Highlight search results.
 
     set hlsearch
 
@@ -107,7 +107,7 @@ Set leader key to space.
 
     let mapleader=' '
 
-Create more convenient keybinds for quitting, save-quitting, saving.
+More convenient keybinds for quitting, save-quitting, saving.
 
     nnoremap <leader>q :q<CR>
     nnoremap <leader>w :x<CR>
@@ -122,7 +122,7 @@ Set netrw to only update directory listings on new directory or netrw refresh.
 
     let g:netrw_fastbrowse=2
 
-Leader keybinds for clipboard yanking/copying and pasting
+Leader keybinds for clipboard yanking/copying and pasting.
 
     noremap <leader>y "+y
     noremap <leader>p "+p
@@ -132,11 +132,11 @@ Enable keyword competition on tab. If the line is only whitespace, insert a tab,
 
     inoremap <expr> <Tab> getline('.')[0 : col('.')-2] =~ '\S' ? "\<C-n>" : "\<Tab>"
 
-Set refresh window keybind also clears search highlighting.
+Set refresh window keybind to also clears search highlighting.
 
     nnoremap <C-l> :noh<CR><C-l>
 
-Leader keybind to toggle spell checking
+Leader keybind to toggle spell checking.
 
     nnoremap <leader>s :set spell!<CR>
 
