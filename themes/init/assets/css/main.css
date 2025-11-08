@@ -67,6 +67,7 @@ code, pre {
 }
 
 code:not(pre code) {
+    color: var(--accent);
     padding: 2px;
 }
 
