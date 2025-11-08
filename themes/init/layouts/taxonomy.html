@@ -1,6 +1,6 @@
 {{ define "main" }}
+<h1>Filter posts by {{ .Title }}</h1>
 {{ .Content }}
-<p>Filter posts by tag: </p>
 <p>
 {{ range .Pages }}
     <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a><br>
