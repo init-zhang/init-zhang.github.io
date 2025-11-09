@@ -1,6 +1,6 @@
 <nav>
-    <a href="/">Home</a>
-    <a href="/projects/">Projects</a>
-    <a href="/posts/">Posts</a>
-    <a href="/tags/">Tags</a>
+<a href="/">init-zhang</a>:~
+{{- range $index, $element := .Ancestors.Reverse }}
+{{- if gt $index 0 }}/<a href="{{ $element.RelPermalink }}">{{ replace ( $element.Title | lower ) " " "-"}}</a>
+{{- end }}{{- end }}/<a href="{{ .RelPermalink }}">{{ replace ( .Title | lower ) " " "-" }}</a>/
 </nav>
