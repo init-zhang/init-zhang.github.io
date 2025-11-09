@@ -1,6 +1,7 @@
 :root {
     --text: #ebdbb2;
     --accent: #fabd2f;
+    --link: #83a598;
     --background: #282828;
     --code-background: #333;
 }
@@ -49,7 +50,12 @@ h3::before {
 }
 
 a {
-    color: #83a598;
+    color: var(--link);
+}
+
+a:hover {
+    color: var(--background);
+    background-color: var(--link);
 }
 
 p.breadcrumbs a {
