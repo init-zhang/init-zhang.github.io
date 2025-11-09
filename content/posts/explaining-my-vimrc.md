@@ -7,7 +7,7 @@ description = "Breaking down and explaining my .vimrc line by line."
 
 This is my `.vimrc` as off 2025-11-08. This post will be breaking down the config line by line.
 
-```
+```vim {linenos=inline}
 " vim -Nu <(curl https://init-zhang.github.io/vimrc)
 
 set viminfo=
