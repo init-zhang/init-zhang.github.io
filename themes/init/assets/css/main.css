@@ -56,9 +56,11 @@ a {
 a:hover {
     color: var(--background);
     background-color: var(--link);
+    text-decoration: none;
 }
 
-p.breadcrumbs a {
+.accent {
+    --link: var(--accent);
     color: var(--accent);
 }
 

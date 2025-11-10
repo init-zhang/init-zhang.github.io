@@ -9,9 +9,8 @@ Render a string with all tags assigned to given page
 {{- $page := .page }}
 
 {{- with $page.GetTerms "tags" }}
-  | [
+  |
       {{- range . }}
-        <a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>
+        <a href="{{ .RelPermalink }}">#{{ .LinkTitle | lower }}</a>
       {{- end }}
-  ]
 {{- end }}

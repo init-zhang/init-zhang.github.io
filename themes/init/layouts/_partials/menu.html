@@ -1,5 +1,5 @@
 <nav>
-<a href="/">init-zhang</a>:~
+<a class="accent" href="/">init-zhang</a>:~
 {{- range $index, $element := .Ancestors.Reverse }}
 {{- if gt $index 0 }}/<a href="{{ $element.RelPermalink }}">{{ replace ( $element.Title | lower ) " " "-"}}</a>
 {{- end }}{{- end }}/<a href="{{ .RelPermalink }}">{{ replace ( .Title | lower ) " " "-" }}</a>/

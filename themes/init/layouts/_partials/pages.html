@@ -1,0 +1,16 @@
+{{- /*
+Print range of pages
+
+@context {pages} pages Pages to print.
+
+@example: {{ partial "pages.html" (dict "pages" .Pages) }}
+*/}}
+
+{{- $pages := .pages }}
+
+<p>
+{{ range $pages }}
+    <span class="accent">{{ time.Format "2006-01-02" .Date }}</span>
+    <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ if .Description }}<br>{{ .Description }}{{ end }}<br>
+{{ end }}
+</p>

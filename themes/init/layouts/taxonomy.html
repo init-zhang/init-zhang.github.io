@@ -2,8 +2,8 @@
 <h1>Filter posts by {{ .Title }}</h1>
 {{ .Content }}
 <p>
-{{ range .Pages }}
-    <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a><br>
+{{ range .Site.Taxonomies.tags.ByCount }}
+    <a href="{{ .Page.Permalink }}">{{ .Name }} ({{ .Count }})</a>
 {{ end }}
 </p>
 {{ end }}

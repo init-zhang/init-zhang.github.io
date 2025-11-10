@@ -1,10 +1,5 @@
 {{ define "main" }}
 <h1>Posts marked as {{ .Title }}</h1>
 {{ .Content }}
-<p>
-{{ range .Pages }}
-    {{ time.Format "2006 Jan 2" .Date }}
-    <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a><br>
-{{ end }}
-</p>
+{{ partial "pages.html" (dict "pages" .Pages) }}
 {{ end }}
