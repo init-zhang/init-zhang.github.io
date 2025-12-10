@@ -74,12 +74,11 @@ code, pre {
 
 code:not(pre code) {
     color: var(--accent);
-    padding: 2px;
 }
 
 pre {
     border: 1px var(--text) solid;
-    padding: 1rem 2ch;
+    padding: 1rem 1ch;
     overflow: auto;
 }
 
@@ -102,7 +101,7 @@ hr {
     text-align: center;
 }
 
-hr::before {
+hr::after {
     content: '---';
     color: var(--text);
 }
