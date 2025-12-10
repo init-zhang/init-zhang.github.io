@@ -3,7 +3,6 @@
     --accent: #fabd2f;
     --link: #83a598;
     --background: #282828;
-    --code-background: #333;
 }
 
 * {
@@ -71,7 +70,6 @@ blockquote {
 
 code, pre {
     font-family: inherit;
-    background-color: var(--code-background);
 }
 
 code:not(pre code) {
@@ -80,13 +78,13 @@ code:not(pre code) {
 }
 
 pre {
-    border-left: 2px var(--accent) solid;
-    padding: 1rem 1ch;
+    border: 1px var(--text) solid;
+    padding: 1rem 2ch;
     overflow: auto;
 }
 
 ul {
-    padding: 1rem 2ch;
+    padding: 0 2ch;
     list-style: none;
     position: relative;
 }
@@ -100,8 +98,13 @@ li::before {
 
 hr {
     border: none;
-    border-top: solid 1px var(--text);
-    margin: 2rem 0;
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+hr::before {
+    content: '---';
+    color: var(--text);
 }
 
 footer {

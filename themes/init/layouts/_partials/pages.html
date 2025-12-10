@@ -8,11 +8,9 @@ Print range of pages
 
 {{- $pages := .pages }}
 
-<ul>
+<p>
 {{ range $pages }}
-    <li>
     <span class="accent">{{ time.Format "2006-01-02" .Date }}</span>
     <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ if .Description }}<br>{{ .Description }}{{ end }}<br>
 {{ end }}
-    </li>
-</ul>
+</p>
