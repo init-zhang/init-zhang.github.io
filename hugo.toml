@@ -3,6 +3,9 @@ languageCode = 'en-us'
 title = 'Zhang Lin'
 theme = 'init'
 
+[permalinks]
+    posts = '/:slug'
+
 [markup]
     [markup.highlight]
         guessSyntax = true
