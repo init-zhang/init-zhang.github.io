@@ -80,8 +80,22 @@ code:not(pre code) {
 }
 
 pre {
-    padding: 1rem;
+    border-left: 2px var(--accent) solid;
+    padding: 1rem 1ch;
     overflow: auto;
+}
+
+ul {
+    padding: 1rem 2ch;
+    list-style: none;
+    position: relative;
+}
+
+li::before {
+    position: absolute;
+    left: 0;
+    content: '-';
+    color: var(--accent);
 }
 
 hr {

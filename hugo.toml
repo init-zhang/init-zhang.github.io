@@ -2,3 +2,11 @@ baseURL = '/'
 languageCode = 'en-us'
 title = 'Zhang Lin'
 theme = 'init'
+summaryLength = 10
+
+[markup]
+    [markup.highlight]
+        guessSyntax = true
+        lineNos = true
+        lineNumbersInTable = false
+        style = 'gruvbox'
