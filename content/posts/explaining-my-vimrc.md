@@ -1,13 +1,14 @@
 +++
 date = 2025-11-08
 title = 'Explaining My Vimrc'
-tags = ['vim', 'config']
-description = "Breaking down and explaining my .vimrc line by line."
+tags = ['config', 'vim']
+description = 'Breaking down my .vimrc line by line.'
+aliases = ['vimrc']
 +++
 
-This is my `.vimrc` as off 2025-11-08. This post will be breaking down the config line by line.
+This is my `.vimrc` as off 2025-12-10.
 
-```vim {linenos=inline}
+```
 " vim -Nu <(curl https://init-zhang.github.io/vimrc)
 
 set viminfo=
@@ -25,13 +26,14 @@ set laststatus=2
 set showcmd
 
 highlight TrailingWhitespace ctermbg=red
-match TrailingWhitespace /\s\+$/
+autocmd BufWinEnter * match TrailingWhitespace /\s\+$/
 
 let mapleader=' '
 
 nnoremap <leader>q :q<CR>
 nnoremap <leader>w :x<CR>
 nnoremap <leader>f :up<CR>
+nnoremap <leader>d :bd<CR>
 
 nnoremap <leader>E :E<CR>
 nnoremap <leader>e :Te<CR>
@@ -59,103 +61,151 @@ This command allows me to run Vim one time with my config. It doesn't depend on 
 `-N` is to enable non-compatible mode to ensure the config works correctly.  
 `-u` is to use the `curl`-ed config.
 
-    " vim -Nu <(curl https://init-zhang.github.io/vimrc)
+```
+" vim -Nu <(curl https://init-zhang.github.io/vimrc)
+```
 
 Here I remove the vim info and swap file, I just don't find them useful.
 
-    set viminfo=
-    set noswapfile
+```
+set viminfo=
+set noswapfile
+```
 
 For automatic indenting depending on the file type.
 
-    filetype plugin indent on
+```
+filetype plugin indent on
+```
 
 Enables both relative line numbers and actual file number on the current line.
 
-    set rnu nu
+```
+set rnu nu
+```
 
 Highlight search results.
 
-    set hlsearch
+```
+set hlsearch
+```
 
 Wrap lines by word and not character, useful for writing.
 
-    set linebreak
+```
+set linebreak
+```
 
 Sensible tab behaviour, set tabs to 4 spaces, set shifting to 4 spaces too, expand tab characters into space characters, delete 4 spaces on backspace.
 
-    set tabstop=4 shiftwidth=4 expandtab smarttab
+```
+set tabstop=4 shiftwidth=4 expandtab smarttab
+```
 
 Sensible indent behaviour, such as maintaining tab level when pressing return/enter.
 
-    set autoindent smartindent
+```
+set autoindent smartindent
+```
 
 Always on status line, I just find useful to have.
 
-    set laststatus=2
+```
+set laststatus=2
+```
 
 Show the latest pressed keys for the current action.
 
-    set showcmd
+```
+set showcmd
+```
 
 Create a highlight group with a red background.
 
-    highlight TrailingWhitespace ctermbg=red
+```
+highlight TrailingWhitespace ctermbg=red
+```
 
 Set that highlight group to trailing spaces.
 
-    match TrailingWhitespace /\s\+$/
+```
+match TrailingWhitespace /\s\+$/
+```
 
 Set leader key to space.
 
-    let mapleader=' '
+```
+let mapleader=' '
+```
 
 More convenient keybinds for quitting, save-quitting, saving.
 
-    nnoremap <leader>q :q<CR>
-    nnoremap <leader>w :x<CR>
-    nnoremap <leader>f :up<CR>
+```
+nnoremap <leader>q :q<CR>
+nnoremap <leader>w :x<CR>
+nnoremap <leader>f :up<CR>
+```
 
 Leader keybinds for opening `netrw` in both the current window or new tab.
 
-    nnoremap <leader>E :E<CR>
-    nnoremap <leader>e :Te<CR>
+```
+nnoremap <leader>E :E<CR>
+nnoremap <leader>e :Te<CR>
+```
 
 Set netrw to only update directory listings on new directory or netrw refresh.
 
-    let g:netrw_fastbrowse=2
+```
+let g:netrw_fastbrowse=2
+```
 
 Leader keybinds for clipboard yanking/copying and pasting.
 
-    noremap <leader>y "+y
-    noremap <leader>p "+p
-    noremap <leader>P "+P
+```
+noremap <leader>y "+y
+noremap <leader>p "+p
+noremap <leader>P "+P
+```
 
 Enable keyword competition on tab. If the line is only whitespace, insert a tab, otherwise open keyword competition prompt.
 
-    inoremap <expr> <Tab> getline('.')[0 : col('.')-2] =~ '\S' ? "\<C-n>" : "\<Tab>"
+```
+inoremap <expr> <Tab> getline('.')[0 : col('.')-2] =~ '\S' ? "\<C-n>" : "\<Tab>"
+```
 
 Set refresh window keybind to also clears search highlighting.
 
-    nnoremap <C-l> :noh<CR><C-l>
+```
+nnoremap <C-l> :noh<CR><C-l>
+```
 
 Leader keybind to toggle spell checking.
 
-    nnoremap <leader>s :set spell!<CR>
+```
+nnoremap <leader>s :set spell!<CR>
+```
 
 More convenient leader keybind to suggest spelling corrections.
 
-    nnoremap <leader>z z=
+```
+nnoremap <leader>z z=
+```
 
 Insert mode keybind to autocorrect the last spelling mistakes, choosing the first correction. It also makes the correction into its own undo group (so it can be undone in one undo) and returns the cursor position.
 
-    inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+```
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+```
 
 Enable spell checking by default in only markdown files.
 
-    autocmd FileType markdown setlocal spell
+```
+autocmd FileType markdown setlocal spell
+```
 
 Set relative line numbers and normal line numbers in netrw for easier navigation.
 
-    autocmd FileType netrw setlocal nu rnu
+```
+autocmd FileType netrw setlocal nu rnu
+```
 
