@@ -1,0 +1,74 @@
+:root {
+    --grn: #00ff00;
+    --fg: #e5e5e5;
+    --bg: #181818;
+    --bg2: #272727;
+    --bla: #000;
+    --speed: 0.02s;
+    --fade-duration: .5s;
+}
+
+.hide {
+    animation: hide var(--duration), fade-in var(--fade-duration) var(--duration);
+}
+
+@keyframes hide { 0%,100% { opacity: 0; }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        filter: blur(10px);
+        transform: translateY(1rem);
+    }
+    to { opacity: 1; }
+}
+
+body {
+    color: var(--fg);
+    background-color: var(--bg);
+    font-family: monospace;
+    font-size: 16px;
+    max-width: 60ch;
+    margin: 0 auto;
+    padding: 1ch;
+}
+
+main :is(h1,h2,h3) {
+    animation: fade-in .5s;
+}
+
+main :not(h1,h2,h3) {
+    animation: hide .125s, fade-in .5s .125s;
+}
+
+a {
+    font-weight: bold;
+    color: var(--grn);
+    text-decoration: underline dotted;
+    text-decoration-thickness: 2px;
+}
+
+a:hover, a:focus {
+    text-decoration-style: solid;
+    filter: brightness(120%);
+}
+
+strong {
+    color: var(--bg);
+    background-color: var(--fg);
+}
+
+code:not(pre code) {
+    font-weight: bold;
+    background-color: var(--bg2);
+}
+
+pre:has(code) {
+    background-color: var(--bg2);
+    box-shadow: 1ch 1rem var(--bla);
+    margin-right: 1ch;
+    margin-bottom: 2rem;
+    padding: 1ch;
+    overflow-x: auto;
+}
