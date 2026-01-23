@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zhang Lin</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .typewriter {
+            white-space: pre;
+            color: #0000;
+            background: linear-gradient(#0000), linear-gradient(var(--fg));
+            background-size: calc(var(--n) * 1ch) 200%;
+            -webkit-background-clip: padding-box, text;
+            background-clip: padding-box, text;
+            background-repeat: no-repeat;
+            animation: hide var(--delay), t calc(var(--n) * var(--speed)) steps(var(--n)) var(--delay);
+        }
+        @keyframes t { from { background-size: 0 200% } }
+        main.long-animate :is(h1,h2,h3) {
+            animation: hide 1.5s, fade-in .5s 1.5s;
+        }
+        main.long-animate :not(h1,h2,h3) {
+            animation: hide 1.625s, fade-in .5s 1.625s;
+        }
+</style>
+</head>
+
+<body>
+    <header>
+        {{templates/ascii-art.html}}
+        <p style="margin-bottom:0;">
+            site login: <span class="typewriter" style='--n:5;--delay:0s'>zhang</span>
+        </p>
+        <p class="hide" style="--duration:0.2s;margin:0;">
+            Password: <span class="typewriter" style="--n:10;--delay:0.7s">**********</span>
+        </p>
+        <p class="hide" style="--duration:1s">
+            {{templates/motd.html}}
+        </p>
+    </header>
+    <main class="long-animate">
+        {{content}}
+        <p><a id="resetIntro" href="/">Reset login animation.</a></p>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const skipIntro = "skipIntro";
+
+            if (sessionStorage.getItem(skipIntro) === "1") {
+                const header = document.querySelector("header");
+                header.querySelectorAll(".hide, .typewriter").forEach(element => {
+                    element.classList.remove("hide", "typewriter");
+                });
+                const main = document.querySelector("main");
+                main.classList.remove("long-animate")
+            } else {
+                sessionStorage.setItem(skipIntro, "1");
+            }
+
+            document.getElementById("resetIntro").addEventListener("click", () => sessionStorage.setItem(skipIntro, "0")) 
+        });
+    </script>
+</body>
+
+</html>
