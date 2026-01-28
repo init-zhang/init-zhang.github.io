@@ -27,6 +27,11 @@ def match_pattern(pattern):
     elif pattern == "content.filename":
         replacement = argv[1].rstrip(".md").title()
 
+    elif pattern == "content.title":
+        with open(argv[1], "r") as file:
+            title = file.readline().strip("\n").lstrip("# ")
+        replacement = title
+
     elif pattern.endswith(".html") and (inner_html := Path(pattern)).exists():
         replacement = inner_html.read_text()
 
