@@ -72,3 +72,15 @@ pre:has(code) {
     padding: 1ch;
     overflow-x: auto;
 }
+
+.rainbow {
+    animation: 5s rainbow linear 0s infinite;
+}
+
+@keyframes rainbow {
+    0% { color: #00FF00; }
+    25% { color: #5555FF; }
+    50% { color: #00FF00; }
+    75% { color: #FF5555; }
+    100% { color: #00FF00; }
+}
