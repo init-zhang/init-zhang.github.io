@@ -19,9 +19,20 @@ define_re = re.compile(r"\{\{define ([\w_\.]+)\}\}\n(.*(\n.*)*?)\n\{\{end\}\}")
 
 # REFACTOR:
 # - template definition within templates
+def match_template(template):
+    match = import_re.match(template)
+    if match is None:
+        return
 
-# Inline patterns
-def match_pattern(pattern):
+    import_file = match.group(1)
+
+    output = template
+
+    output = match_template(output)
+
+    return output
+
+def inline_pattern(pattern):
     replacement = None
 
     if pattern == "content":
@@ -54,7 +65,7 @@ def match_inline(text):
         full_group: str = match.group(0)
         inner_group: str = match.group(1)
         print(f"Found pattern: {full_group}")
-        replacement = match_pattern(inner_group)
+        replacement = inline_pattern(inner_group)
 
         if replacement is None: raise Exception(f"{inner_group} match not found")
 
