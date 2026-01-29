@@ -27,7 +27,7 @@
 body {
     color: var(--fg);
     background-color: var(--bg);
-    font-family: monospace;
+    font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
     font-size: 16px;
     max-width: 60ch;
     margin: 0 auto;
