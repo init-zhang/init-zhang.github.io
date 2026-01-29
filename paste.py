@@ -13,6 +13,9 @@ if template_path == output_path:
 
 template_html = output_html = template_path.read_text()
 pattern_re = re.compile(r"\{\{([\w\s\"\-\./]+)\}\}")
+export_re = re.compile(r"\{\{export ([\w_\.]+)\}\}\n(.*(\n.*)*?)\n\{\{end\}\}")
+import_re = re.compile(r"\{\{import \"([\S\.]+)\"\}\}")
+define_re = re.compile(r"\{\{define ([\w_\.]+)\}\}\n(.*(\n.*)*?)\n\{\{end\}\}")
 
 # REFACTOR:
 # - template definition within templates
