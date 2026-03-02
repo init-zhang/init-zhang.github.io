@@ -17,8 +17,6 @@ header {
     background-color: var(--bg);
     border: 1px var(--fg) solid;
     padding: 0 1rem;
-    position: sticky;
-    top: 2rem;
 }
 
 h1,h2,h3 {
