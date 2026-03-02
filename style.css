@@ -44,6 +44,14 @@ code:not(pre code) {
     font-weight: bold;
 }
 
+code:not(pre code)::before {
+    content: '`';
+}
+
+code:not(pre code)::after {
+    content: '`';
+}
+
 pre:has(code) {
     border: 1px var(--fg) solid;
     padding: 1rem;
